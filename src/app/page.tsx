@@ -8,6 +8,8 @@ import EmptyState from './components/empty-state';
 import ListingCard from './components/listings/listing-card';
 import ClientOnly from './components/ClientOnly';
 
+export const dynamic = 'force-dynamic';
+
 export default async function Home() {
 	const listings = await getListings();
 	const currentUser = await getCurrentUser();
