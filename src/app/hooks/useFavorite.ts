@@ -5,7 +5,7 @@ import { toast } from 'react-hot-toast';
 import { SafeUser } from '../types';
 
 // HOOKS
-import { useLoginModalStore } from './useLoginModel';
+import { useLoginModalStore } from './useLoginModal';
 
 // SERVICES
 import { api } from '../services/api';

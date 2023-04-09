@@ -4,7 +4,7 @@ import { useCallback, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-hot-toast';
 
-import { SafeReservation, SafeUser } from '@/app/types';
+import { SafeListing, SafeUser } from '@/app/types';
 
 // SERVICES
 import { api } from '@/app/services/api';
@@ -15,12 +15,12 @@ import Heading from '@/app/components/heading';
 import ListingCard from '@/app/components/listings/listing-card';
 
 interface TripsClientProps {
-	reservations: SafeReservation[];
+	listings: SafeListing[];
 	currentUser: SafeUser | null;
 }
 
 const TripsClient: React.FC<TripsClientProps> = ({
-	reservations = [],
+	listings = [],
 	currentUser,
 }) => {
 	const router = useRouter();
@@ -31,8 +31,8 @@ const TripsClient: React.FC<TripsClientProps> = ({
 			setDeletingId(id);
 
 			try {
-				await api.delete(`/reservations/${id}`);
-				toast.success('Reservation cancelled');
+				await api.delete(`/listings/${id}`);
+				toast.success('Listing deleted');
 				router.refresh();
 			} catch (error: any) {
 				console.error(error);
@@ -51,22 +51,18 @@ const TripsClient: React.FC<TripsClientProps> = ({
 
 	return (
 		<Container>
-			<Heading
-				title="Trips"
-				subtitle="Where you've been and where you're going"
-			/>
+			<Heading title="Properties" subtitle="List of your properties" />
 
 			<div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
-				{reservations?.map((reservation) => (
+				{listings?.map((listing) => (
 					<ListingCard
-						key={reservation.id}
-						actionLabel="Cancel reservation"
-						actionId={reservation.id}
+						key={listing.id}
+						actionLabel="Delete property"
+						actionId={listing.id}
 						onAction={onCancel}
-						disabled={deletingId === reservation.id}
+						disabled={deletingId === listing.id}
 						currentUser={currentUser}
-						reservation={reservation}
-						data={reservation.listing}
+						data={listing}
 					/>
 				))}
 			</div>

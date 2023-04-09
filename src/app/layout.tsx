@@ -13,6 +13,7 @@ import Navbar from './components/navbar';
 import LoginModal from './components/modals/login-modal';
 import RegisterModal from './components/modals/register-modal';
 import RentModal from './components/modals/rent-modal';
+import SearchModal from './components/modals/search-modal';
 
 export const metadata = {
 	title: 'Airbnb fake',
@@ -39,6 +40,7 @@ export default async function RootLayout({
 					<LoginModal />
 					<RegisterModal />
 					<RentModal />
+					<SearchModal />
 				</ClientOnly>
 				<div className="pb-20 pt-28">{children}</div>
 			</body>

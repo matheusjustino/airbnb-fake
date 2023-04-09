@@ -14,12 +14,12 @@ import Container from '@/app/components/container';
 import Heading from '@/app/components/heading';
 import ListingCard from '@/app/components/listings/listing-card';
 
-interface TripsClientProps {
+interface ReservationsClientProps {
 	reservations: SafeReservation[];
-	currentUser: SafeUser | null;
+	currentUser: SafeUser;
 }
 
-const TripsClient: React.FC<TripsClientProps> = ({
+const ReservationsClient: React.FC<ReservationsClientProps> = ({
 	reservations = [],
 	currentUser,
 }) => {
@@ -52,15 +52,15 @@ const TripsClient: React.FC<TripsClientProps> = ({
 	return (
 		<Container>
 			<Heading
-				title="Trips"
-				subtitle="Where you've been and where you're going"
+				title="Reservations"
+				subtitle="Bookings on your properties"
 			/>
 
 			<div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-8">
 				{reservations?.map((reservation) => (
 					<ListingCard
 						key={reservation.id}
-						actionLabel="Cancel reservation"
+						actionLabel="Cancel guest reservation"
 						actionId={reservation.id}
 						onAction={onCancel}
 						disabled={deletingId === reservation.id}
@@ -74,4 +74,4 @@ const TripsClient: React.FC<TripsClientProps> = ({
 	);
 };
 
-export default TripsClient;
+export default ReservationsClient;

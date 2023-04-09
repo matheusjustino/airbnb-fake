@@ -11,8 +11,8 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 
 // HOOKS
-import { useLoginModalStore } from '@/app/hooks/useLoginModel';
-import { useRegisterModalStore } from '@/app/hooks/useRegisterModel';
+import { useLoginModalStore } from '@/app/hooks/useLoginModal';
+import { useRegisterModalStore } from '@/app/hooks/useRegisterModal';
 
 // COMPONENTS
 import Modal from './modal';

@@ -1,5 +1,5 @@
 // UTILS
-import { getListings } from './utils/get-listings';
+import { GetListingsParamsInterface, getListings } from './utils/get-listings';
 import { getCurrentUser } from './utils/get-current-user';
 
 // COMPONENTS
@@ -10,8 +10,12 @@ import ClientOnly from './components/ClientOnly';
 
 export const dynamic = 'force-dynamic';
 
-export default async function Home() {
-	const listings = await getListings();
+interface HomeProps {
+	searchParams: GetListingsParamsInterface;
+}
+
+async function Home({ searchParams }: HomeProps) {
+	const listings = await getListings(searchParams);
 	const currentUser = await getCurrentUser();
 
 	if (!listings?.length) {
@@ -38,3 +42,5 @@ export default async function Home() {
 		</Container>
 	);
 }
+
+export default Home;

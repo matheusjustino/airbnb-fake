@@ -15,7 +15,7 @@ import { CATEGORIES_LIST } from '@/app/utils/categories-list';
 import { api } from '@/app/services/api';
 
 // HOOKS
-import { useLoginModalStore } from '@/app/hooks/useLoginModel';
+import { useLoginModalStore } from '@/app/hooks/useLoginModal';
 
 // COMPONENTS
 import Container from '@/app/components/container';

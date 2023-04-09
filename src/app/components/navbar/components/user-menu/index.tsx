@@ -9,8 +9,8 @@ import { AiOutlineMenu } from 'react-icons/ai';
 import { SafeUser } from '@/app/types';
 
 // HOOKS
-import { useLoginModalStore } from '@/app/hooks/useLoginModel';
-import { useRegisterModalStore } from '@/app/hooks/useRegisterModel';
+import { useLoginModalStore } from '@/app/hooks/useLoginModal';
+import { useRegisterModalStore } from '@/app/hooks/useRegisterModal';
 import { useRentModalStore } from '@/app/hooks/useRentModal';
 
 // COMPONENTS
@@ -77,15 +77,15 @@ const UserMenu: React.FC<UserMenu> = ({ currentUser }) => {
 									label="My trips"
 								/>
 								<MenuItem
-									onClick={() => {}}
+									onClick={() => router.push('/favorites')}
 									label="My favorites"
 								/>
 								<MenuItem
-									onClick={() => {}}
+									onClick={() => router.push('/reservations')}
 									label="My reservations"
 								/>
 								<MenuItem
-									onClick={() => {}}
+									onClick={() => router.push('/properties')}
 									label="My properties"
 								/>
 								<MenuItem

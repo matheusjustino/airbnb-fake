@@ -13,8 +13,8 @@ import * as z from 'zod';
 import { api } from '@/app/services/api';
 
 // HOOKS
-import { useRegisterModalStore } from '@/app/hooks/useRegisterModel';
-import { useLoginModalStore } from '@/app/hooks/useLoginModel';
+import { useRegisterModalStore } from '@/app/hooks/useRegisterModal';
+import { useLoginModalStore } from '@/app/hooks/useLoginModal';
 
 // COMPONENTS
 import Modal from './modal';
@@ -53,7 +53,9 @@ const RegisterModal: React.FC = () => {
 
 		try {
 			await api.post(`/auth/register`, data);
+			toast.success('Success!');
 			registerModal.onClose();
+			loginModal.onOpen();
 		} catch (error: any) {
 			console.error(error);
 			const errorMsg =
