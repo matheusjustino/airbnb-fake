@@ -1,28 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with
-[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Application - Airbnb Fake
 
-## Getting Started
+Check it out [here](https://airbnb-fake.vercel.app)!
 
-First, run the development server:
+#
 
-```bash
-yarn dev
-```
+## Resume
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the
-result.
+    This is a fake Airbnb. It is possible to create an account, list properties,
+    post your properties, favorite and book for a period of time.
 
 ## Information
 
-    - github auth0
-    - google auth0
+**In this project were used:**
+**`NextJs, NextAuth, Auth0, TailwindCSS, Next Cloudinary, Leaflet, Prisma and MongoDB`**.
+**as main tools and technologies.**
 
-## Deploy on Vercel
+## Application Screenshots
 
-The easiest way to deploy your Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
-
-Check out our
-[Next.js deployment documentation](https://nextjs.org/docs/deployment) for more
-details.
+![Login](./screenshots/screenshot-10.png)
+![Register](./screenshots/screenshot-11.png)
+![Home](./screenshots/screenshot-1.png)
+![Selecting filters](./screenshots/screenshot-4.png)
+![Home with filters](./screenshots/screenshot-2.png)
+![Property details](./screenshots/screenshot-3.png)
+![My trips](./screenshots/screenshot-5.png)
+![My favorites](./screenshots/screenshot-6.png)
+![My reservations](./screenshots/screenshot-7.png)
+![My properties](./screenshots/screenshot-8.png)
+![Posting new property](./screenshots/screenshot-9.png)
