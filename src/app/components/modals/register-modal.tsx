@@ -123,6 +123,7 @@ const RegisterModal: React.FC = () => {
 				label="Continue with Github"
 				icon={AiFillGithub}
 				onClick={() => signIn('github')}
+				disabled
 			/>
 
 			<div className="text-neutral-500 text-center mt-4 font-light">

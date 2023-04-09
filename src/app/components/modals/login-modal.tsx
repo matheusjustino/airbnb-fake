@@ -39,12 +39,12 @@ const LoginModal: React.FC = () => {
 	} = useForm<FieldValues>({
 		resolver: zodResolver(formSchema),
 		values: {
-			email: 'matheusz_7@hotmail.com',
-			password: '123456',
+			email: '',
+			password: '',
 		},
 		defaultValues: {
-			email: 'matheusz_7@hotmail.com',
-			password: '123456',
+			email: '',
+			password: '',
 		},
 	});
 
@@ -129,6 +129,7 @@ const LoginModal: React.FC = () => {
 				label="Continue with Github"
 				icon={AiFillGithub}
 				onClick={() => signIn('github')}
+				disabled
 			/>
 
 			<div className="text-neutral-500 text-center mt-4 font-light">
