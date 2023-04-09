@@ -1,5 +1,6 @@
 // UTILS
 import { getListingById } from '@/app/utils/get-listing-by-id';
+import { getReservations } from '@/app/utils/get-reservation';
 import { getCurrentUser } from '@/app/utils/get-current-user';
 
 // COMPONENTS
@@ -13,6 +14,7 @@ interface ParamsInterface {
 
 const ListingPage = async ({ params }: { params: ParamsInterface }) => {
 	const listing = await getListingById(params);
+	const reservations = await getReservations(params);
 	const currentUser = await getCurrentUser();
 
 	if (!listing) {
@@ -25,7 +27,11 @@ const ListingPage = async ({ params }: { params: ParamsInterface }) => {
 
 	return (
 		<ClientOnly>
-			<ListingClient listing={listing} currentUser={currentUser} />
+			<ListingClient
+				listing={listing}
+				reservations={reservations}
+				currentUser={currentUser}
+			/>
 		</ClientOnly>
 	);
 };

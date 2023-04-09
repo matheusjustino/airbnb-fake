@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { signOut } from 'next-auth/react';
 import { AiOutlineMenu } from 'react-icons/ai';
 
@@ -24,6 +25,7 @@ const UserMenu: React.FC<UserMenu> = ({ currentUser }) => {
 	const loginModal = useLoginModalStore();
 	const registerModal = useRegisterModalStore();
 	const rentModal = useRentModalStore();
+	const router = useRouter();
 	const [isOpen, setIsOpen] = useState(false);
 
 	const toggleOpen = useCallback(() => {
@@ -65,7 +67,15 @@ const UserMenu: React.FC<UserMenu> = ({ currentUser }) => {
 					<div className="flex flex-col cursor-pointer">
 						{currentUser ? (
 							<>
-								<MenuItem onClick={() => {}} label="My trips" />
+								<MenuItem
+									onClick={() => router.push('/')}
+									label="Home"
+								/>
+
+								<MenuItem
+									onClick={() => router.push('/trips')}
+									label="My trips"
+								/>
 								<MenuItem
 									onClick={() => {}}
 									label="My favorites"
