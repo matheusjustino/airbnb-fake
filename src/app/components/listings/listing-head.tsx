@@ -42,7 +42,9 @@ const ListingHead: React.FC<ListingHeadProps> = ({
 					src={imageSrc}
 					fill
 					className="object-cover w-full"
-					quality={80}
+					quality={75}
+					placeholder="blur"
+					priority
 				/>
 
 				<div className="absolute top-5 right-5">

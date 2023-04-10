@@ -14,6 +14,9 @@ const Avatar: React.FC<AvatarProps> = ({ src }) => {
 			width="30"
 			alt="Avatar"
 			src={src ?? '/images/placeholder.jpg'}
+			quality={75}
+			placeholder="blur"
+			priority
 		/>
 	);
 };

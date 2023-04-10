@@ -95,7 +95,9 @@ const ListingCard: React.FC<ListingsCardProps> = ({
 						fill
 						src={data.imageSrc}
 						className="object-cover w-full h-full group-hover:scale-110 transition"
-						quality={80}
+						quality={75}
+						placeholder="blur"
+						priority
 					/>
 
 					<div className="absolute top-3 right-3">

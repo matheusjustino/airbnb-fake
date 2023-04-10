@@ -50,6 +50,9 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
 									fill
 									style={{ objectFit: 'cover' }}
 									src={value}
+									quality={75}
+									placeholder="blur"
+									priority
 								/>
 							</div>
 						)}

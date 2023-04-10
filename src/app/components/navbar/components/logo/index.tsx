@@ -14,8 +14,9 @@ const Logo: React.FC = () => {
 			width="100"
 			height="100"
 			priority
-			quality={80}
+			quality={75}
 			src="/images/logo.png"
+			placeholder="blur"
 		/>
 	);
 };
